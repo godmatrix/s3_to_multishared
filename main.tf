@@ -43,14 +43,14 @@ resource "aws_sns_topic" "file_routed" {
 resource "aws_sns_topic_subscription" "email_elucas" {
   topic_arn = aws_sns_topic.file_routed.arn
   protocol  = "email"
-  endpoint  = "elucas@ocsheriff.gov"
+  endpoint  = "your_email.com"
 }
 
 # (Optional) Add more emails here the same way
 # resource "aws_sns_topic_subscription" "another_email" {
 #   topic_arn = aws_sns_topic.file_routed.arn
 #   protocol  = "email"
-#   endpoint  = "another@ocsheriff.gov"
+#   endpoint  = "your_group_email.com"
 # }
 
 # ==================== LAMBDA ROLE ====================
@@ -139,5 +139,5 @@ output "csv_folder" {
 }
 
 output "notification_email" {
-  value = "elucas@ocsheriff.gov"
+  value = "your_email.com"
 }
